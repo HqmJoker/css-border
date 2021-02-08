@@ -8,6 +8,11 @@
         .demoBox {
             list-style: none;
             padding: 100px 100px 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .demoBox li{
+            margin-right: 50px;
         }
         /* border1-start */
         .border1 .borderBox {
@@ -57,13 +62,130 @@
         .border2 .borderBox:hover {
             animation: linearGradientMove .3s infinite linear;
         }
+        /* border2-end */
+        /* border3-start */
+        .border3 .borderBox {
+            width: 200px;
+            height: 100px;
+            outline: 1px solid #333;
+        }
+        .border3 .borderBox:hover {
+            outline: none;
+            background: 
+                linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+                linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+                linear-gradient(0deg, #333 50%, transparent 0) repeat-y,
+                linear-gradient(0deg, #333 50%, transparent 0) repeat-y;
+            background-size: 10px 1px, 10px 1px, 1px 10px, 1px 10px;
+            background-position: 0 0, 0 100%, 0 0, 100% 0;
+            animation: linearGradientMove .3s infinite linear;
+        }
+        /* border3-end */
+        /* border2/border3 animation-start */
         @keyframes linearGradientMove {
             100% {
                 background-position: 10px 0, -10px 100%, 0 -10px, 100% 10px;
             }
         } 
-        /* border2-end */
-
+        /* border2/border3 animation-end */
+        /* border4-start */
+        .border4 .borderBox {
+            width: 200px;
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        .border4 .borderBox:before {
+            content: '';
+            position: absolute;
+            left: -50%;
+            top: -50%;
+            width: 200%;
+            height: 200%;
+            background-repeat: no-repeat;
+            background-size: 50% 50%, 50% 50%;
+            background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+            background-image: linear-gradient(#399953, #399953), linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33), linear-gradient(#377af5, #377af5);
+            animation: rotate 4s linear infinite;
+        }
+        .border4 .borderBox:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 190px;
+            height: 140px;
+            background: white;
+        }
+        /* border4-end */
+        /* border5-start */
+        .border5 .borderBox {
+            width: 200px;
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        .border5 .borderBox:before {
+            content: '';
+            position: absolute;
+            left: -50%;
+            top: -50%;
+            width: 200%;
+            height: 200%;
+            background-repeat: no-repeat;
+            background-size: 50% 50%;
+            background-position: 0 0;
+            background-image: linear-gradient(#399953, #399953);
+            animation: rotate 4s linear infinite;
+        }
+        .border5 .borderBox:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 190px;
+            height: 140px;
+            background: white;
+        }
+        /* border5-end */
+        /* border6-start */
+        .border6 .borderBox {
+            width: 200px;
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, .1);
+        }
+        .border6 .borderBox:before {
+            content: '';
+            position: absolute;
+            left: -50%;
+            top: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: conic-gradient(transparent, rgba(168, 239, 255, 1), transparent 30%);
+            animation: rotate 4s linear infinite;
+        }
+        .border6 .borderBox:after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 190px;
+            height: 140px;
+            background-color: white;
+        }
+        /* border6-end */
+        /* border4/border5/border6 animation-start */
+        @keyframes rotate {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+        /* border4/border5/border6 animation-end */
     </style>
 </head>
 <body>
@@ -74,6 +196,22 @@
         </li>
         <li class="border2">
             <h3>2.hover边框动态移动</h3>
+            <div class="borderBox"></div>
+        </li>
+        <li class="border3">
+            <h3>3.实线边框变虚线边框移动</h3>
+            <div class="borderBox"></div>
+        </li>
+        <li class="border4">
+            <h3>4.多色段边框</h3>
+            <div class="borderBox"></div>
+        </li>
+        <li class="border5">
+            <h3>5.单色段边框</h3>
+            <div class="borderBox"></div>
+        </li>
+        <li class="border6">
+            <h3>6.conic-gradient角向渐变边框</h3>
             <div class="borderBox"></div>
         </li>
     </ul>
