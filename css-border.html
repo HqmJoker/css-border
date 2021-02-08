@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css动画</title>
+    <style>
+        .demoBox {
+            list-style: none;
+            padding: 100px 100px 0;
+        }
+        /* border1-start */
+        .border1 .borderBox {
+            position: relative;
+            border: 1px solid #03A9F3;
+            width: 200px;
+            height: 100px;
+        }
+        .border1 .borderBox::before,
+        .border1 .borderBox::after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            transition: all 0.3s
+        }
+        .border1 .borderBox::before {
+            top: -5px;
+            left: -5px;
+            border-top: 1px solid #03A9F3;
+            border-left: 1px solid #03A9F3;
+        }
+        .border1 .borderBox::after {
+            right: -5px;
+            bottom: -5px;
+            border-bottom: 1px solid #03A9F3;
+            border-right: 1px solid #03A9F3;
+        }
+        .border1 .borderBox:hover::before,
+        .border1 .borderBox:hover::after {
+            width: calc(100% + 9px);
+            height: calc(100% + 9px);
+        }
+        /* border1-end */
+        /* border2-start */
+        .border2 .borderBox {
+            width: 200px;
+            height: 100px;
+            background: 
+                linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+                linear-gradient(90deg, #333 50%, transparent 0) repeat-x,
+                linear-gradient(0deg, #333 50%, transparent 0) repeat-y,
+                linear-gradient(0deg, #333 50%, transparent 0) repeat-y;
+            background-size: 10px 1px, 10px 1px, 1px 10px, 1px 10px;
+            background-position: 0 0, 0 100%, 0 0, 100% 0;
+        }
+        .border2 .borderBox:hover {
+            animation: linearGradientMove .3s infinite linear;
+        }
+        @keyframes linearGradientMove {
+            100% {
+                background-position: 10px 0, -10px 100%, 0 -10px, 100% 10px;
+            }
+        } 
+        /* border2-end */
+
+    </style>
+</head>
+<body>
+    <ul class="demoBox">
+        <li class="border1">
+            <h3>1.hover边框变长</h3>
+            <div class="borderBox"></div>
+        </li>
+        <li class="border2">
+            <h3>2.hover边框动态移动</h3>
+            <div class="borderBox"></div>
+        </li>
+    </ul>
+</body>
+</html>
