@@ -269,6 +269,37 @@
             transform: rotateZ(0deg) translate(0%, -0%);
         }
         /* border9-end */
+        /* border10-start */
+        .border10 .borderBox {
+            position: relative;
+            width: 200px;
+            height: 100px;
+            margin: 0 auto;
+            border: 24px solid;
+            border-image: url(./source/imgs/skull-border.svg);
+            border-image-slice: 32;
+            border-image-repeat: round;
+        }
+        /* border10-end */
+        /* border11-start */
+        .border11 .borderBox {
+            width: 200px;
+            height: 100px;
+            border: 10px solid;
+            border-image: linear-gradient(45deg, gold, deeppink) 1;
+            clip-path: inset(0px round 10px);
+            animation: huerotate 6s infinite linear;
+            filter: hue-rotate(360deg);
+        }
+        @keyframes huerotate {
+            0% {
+                filter: hue-rotate(0deg);
+            }
+            100% {
+                filter: hue-rotate(360deg);
+            }
+        }
+        /* border11-end */
     </style>
 </head>
 <body>
@@ -307,6 +338,14 @@
         </li>
         <li class="border9">
             <h3>9.overflow:hidden边框</h3>
+            <div class="borderBox"></div>
+        </li>
+        <li class="border10">
+            <h3>10.border-images切割动态边框</h3>
+            <div class="borderBox"></div>
+        </li>
+        <li class="border11">
+            <h3>11.border-image + filter + clip-path 渐变颜色边框</h3>
             <div class="borderBox"></div>
         </li>
     </ul>
