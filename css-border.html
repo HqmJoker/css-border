@@ -189,6 +189,86 @@
             }
         }
         /* border4/border5/border6 animation-end */
+        /* border7/border8-start */
+        .border7 .borderBox, .border8 .borderBox {
+            width: 200px;
+            height: 150px;
+            position: relative;
+        }
+        .border7 .borderBox::before, .border8 .borderBox::before, .border8 .borderBox::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 2px solid gold;
+            animation: clippath 3s infinite linear;
+            border-radius: 5px;
+        }
+        .border8 .borderBox::after {
+            animation: clippath 3s infinite -1.5s  linear;
+        }
+        @keyframes clippath {
+            0%,
+            100% {
+                clip-path: inset(0 0 95% 0);
+            }
+            25% {
+                clip-path: inset(0 0 0 95%);
+            }
+            50% {
+                clip-path: inset(95% 0 0 0);
+            }
+            75% {
+                clip-path: inset(0 95% 0 0);
+            }
+        }
+        /* border7/border8-end */
+        /* border9-start */
+        .border9 .borderBox {
+            position: relative;
+            margin: auto;
+            width: 200px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            overflow: hidden;
+        }
+        .border9 .borderBox::after {
+            content: "Hover Me";
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            right: 4px;
+            left: 4px;
+            line-height: 92px;
+            font-size: 24px;
+            background: yellowgreen;
+            border: 2px solid #fff;
+            cursor: pointer;
+            color: #fff;
+        }
+        .border9 .borderBox::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            right: -20px;
+            left: 0px;
+            background: yellowgreen;
+            transform: rotateZ(-90deg) translate(-100%, -100%);
+            transform-origin: top left;
+            transition: transform .3s;
+            transition-timing-function: linear;
+        }
+        .border9 .borderBox:hover {
+            filter: contrast(1.2);
+        }
+        .border9 .borderBox:hover::before {
+            transform: rotateZ(0deg) translate(0%, -0%);
+        }
+        /* border9-end */
     </style>
 </head>
 <body>
@@ -215,6 +295,18 @@
         </li>
         <li class="border6">
             <h3>6.conic-gradient角向渐变边框</h3>
+            <div class="borderBox"></div>
+        </li>
+        <li class="border7">
+            <h3>7.clip-path单色线段边框</h3>
+            <div class="borderBox"></div>
+        </li>
+        <li class="border8">
+            <h3>8.clip-path双线段边框</h3>
+            <div class="borderBox"></div>
+        </li>
+        <li class="border9">
+            <h3>9.overflow:hidden边框</h3>
             <div class="borderBox"></div>
         </li>
     </ul>
