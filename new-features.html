@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css一些新特性</title>
+    <style>
+        .desc {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .colorPicker {
+            position: relative;
+            text-align: center;
+            width: 1427px;
+            height: 863px;
+            margin: 0 auto;
+        }
+        .colorPicker-input { 
+            padding: 0;
+            border: none; 
+            position: absolute;
+            width: 100%; 
+            height: 100%;
+            mix-blend-mode: hue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="colorPicker">
+        <h2>css: mix-blend-mode颜色选取器</h2>
+        <p class="desc">描述：点击图片选取颜色查看效果</p>
+        <input class="colorPicker-input" type="color" value="#0000ff">
+        <img src="./source/imgs/car.jpg" width=1427 height=863>
+    </section>
+</body>
+</html>
