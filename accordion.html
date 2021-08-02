@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css手风琴效果</title>
+    <style>
+        .contentBox {
+            width: 400px;
+            margin: 50px auto 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .desc {
+            color: #666;
+            font-size: 0.9em;
+        }
+		.box { 
+            width: 1000px; 
+            height: 580px; 
+            overflow: hidden;
+        }
+		.box div { 
+            width: 10%;  
+            float: left; 
+            transition: all 1s;
+        }
+        img {  
+            width: 960px; 
+            cursor: pointer;
+        }
+        .box:hover div { 
+            width: 5%; 
+        }
+		.box div:hover { 
+            width: 80%; 
+        }
+    </style>
+</head>
+
+<body>
+    <section class="contentBox">
+        <h2>css: 手风琴效果</h2>
+        <p class="desc">描述：鼠标移动到图片查看效果</p>
+        <div class="box">
+            <div><img src="./source/imgs/car.jpg" alt="汽车"></div>
+            <div><img src="./source/imgs/car.jpg" alt="汽车"></div>
+            <div><img src="./source/imgs/car.jpg" alt="汽车"></div>
+            <div><img src="./source/imgs/car.jpg" alt="汽车"></div>
+            <div><img src="./source/imgs/car.jpg" alt="汽车"></div>
+        </div>
+    </section>
+</body>
+</html>
