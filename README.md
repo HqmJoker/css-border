@@ -1,4 +1,4 @@
-# css-border效果图
+# css-border效果图 [查看示例](./css-border.html)
 ![image1](./source/1.gif)
 ![image2](./source/2.gif)
 ![image3](./source/3.gif)
