@@ -9,4 +9,6 @@
 ![image1](./source/colorPicker.gif)
 # css手风琴效果 [查看示例](./accordion.html)
 ![image1](./source/accordion.gif)
+# css打字效果 [查看示例](./typing.html)
+![image1](./source/typing.gif)
 ### 以上示例参考链接：https://juejin.cn/post/6986967746453962782
