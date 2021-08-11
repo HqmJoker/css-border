@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css倒影效果</title>
+    <style>
+        .contentBox {
+            width: 400px;
+            margin: 50px auto 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .desc {
+            color: #666;
+            font-size: 0.9em;
+        }
+		.box { 
+            margin: 50px auto;
+            width: 200px;
+            height: 120px;
+            background-image: url('./source/imgs/car.jpg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+            position: relative;
+            /* -webkit-box-reflect: below; // 兼容性不好 */
+        }
+        .box::after {
+            width: 200px;
+            height: 120px;
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: inherit;
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <section class="contentBox">
+        <h2>css: 图片倒影效果</h2>
+        <p class="desc">描述：css图片倒影效果</p>
+        <div class="box"></div>
+    </section>
+</body>
+</html>
