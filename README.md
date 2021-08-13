@@ -17,3 +17,7 @@
 # css图片倒影 [查看示例](./inverted.html)
 ![image1](./source/inverted.jpg)
 ### 以上示例参考链接：https://github.com/chokcoco/iCSS
+
+# css造火箭 [查看示例](./rocket.html)
+![image1](./source/rocket.gif)
+### 以上示例参考链接：https://juejin.cn/post/6972337061042847751
